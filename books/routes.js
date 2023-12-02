@@ -16,5 +16,15 @@ function BookRoutes(app) {
         res.json(book);
       };
 
+      const findBookByTitle = async (req, res) => {
+        const book = await dao.findBookByTitle(req.params.title);
+        res.json(book);
+      };
+
+      const deleteBook = async (req, res) => {
+        const status = await dao.deleteBook(req.params.key);
+        res.json(status);
+      };   
+
 }
 export default BookRoutes;
