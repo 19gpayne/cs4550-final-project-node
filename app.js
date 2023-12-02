@@ -4,6 +4,7 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import UserRoutes from "./users/routes.js";
 import session from "express-session";
+import BookRoutes from "./books/routes.js";
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || "mongodb://127.0.0.1:27017/books"
 mongoose.connect(CONNECTION_STRING);
 const app = express();
@@ -24,5 +25,6 @@ app.use(
 );
   
 UserRoutes(app);
+BookRoutes(app);
 app.listen(process.env.PORT || 4000);
 
