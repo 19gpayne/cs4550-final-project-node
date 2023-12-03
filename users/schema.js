@@ -10,6 +10,13 @@ const userSchema = new mongoose.Schema({
       type: String, require: true,
       enum: ["READER", "PROFESSIONAL", "PUBLISHER"],
       default: "READER" },
+    favorites: [
+        {
+          key: { type: String, required: true },
+          title: { type: String, required: true },
+          image: { type: String },
+        }
+      ],
   },
   { collection: "users" });
 export default userSchema;

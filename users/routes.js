@@ -51,9 +51,9 @@ function UserRoutes(app) {
     res.json(200);
   };
   const account = async (req, res) => {
-    console.log(req.session['currentUser'])
     res.json(req.session['currentUser']);
   };
+
   app.post("/api/users", createUser);
   app.get("/api/users", findAllUsers);
   app.get("/api/users/:userId", findUserById);
