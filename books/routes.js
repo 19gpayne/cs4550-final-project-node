@@ -27,13 +27,9 @@ function BookRoutes(app) {
         res.json(status);
       };   
 
-      const addReview = async (req, res) => {
-        const status = await dao.addReview(req.params.key, req.body);
-        res.json(status);
-      }
-
-      const deleteReview = async (req, res) => {
-        const status = await dao.deleteReview(req.params.key, req.body);
+      const updateBook = async (req, res) => {
+        const { key } = req.params;
+        const status = await dao.updateBook(key, req.body);
         res.json(status);
       }
 
@@ -42,8 +38,7 @@ function BookRoutes(app) {
     app.get("/api/books/:key", findBookByKey);
     app.get("/api/books/:title", findBookByTitle);
     app.delete("/api/books/:key", deleteBook);
-    app.put("/api/books/:key/reviews", addReview);
-    app.delete("/api/books/:key/reviews", deleteReview);
+    app.put("/api/books/:key", updateBook);
 
 }
 export default BookRoutes;

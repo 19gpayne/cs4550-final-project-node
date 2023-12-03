@@ -9,7 +9,11 @@ const bookSchema = new mongoose.Schema({
     reviews: [
         {
           userID: { type: String, required: true },
-          comment: { type: String, required: true }
+          username: { type: String, required: true },
+          timestamp: { type: String, required: true },
+          title: { type: String },
+          rating: { type: String, required: true },
+          review: { type: String },
         }
       ]
   },
