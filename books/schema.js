@@ -12,7 +12,7 @@ const bookSchema = new mongoose.Schema({
           username: { type: String, required: true },
           user_role: { type: String, required: true },
           timestamp: { type: String, required: true },
-          title: { type: String },
+          review_title: { type: String },
           rating: { type: String, required: true },
           review: { type: String },
         }
