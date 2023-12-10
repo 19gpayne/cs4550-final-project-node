@@ -10,6 +10,7 @@ const bookSchema = new mongoose.Schema({
         {
           userID: { type: String, required: true },
           username: { type: String, required: true },
+          user_role: { type: String, required: true },
           timestamp: { type: String, required: true },
           title: { type: String },
           rating: { type: String, required: true },
