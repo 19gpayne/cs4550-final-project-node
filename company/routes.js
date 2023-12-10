@@ -29,9 +29,9 @@ function CompanyRoutes(app) {
 
     app.get("/api/companies", findAllCompanies);
     app.post("/api/companies", createCompany);
-    app.get("/api/companies/:id", findCompanyById);
-    app.delete("/api/companies/:id", deleteCompany);
-    app.put("/api/companies/:id", updateCompany);
+    app.get("/api/companies/:_id", findCompanyById);
+    app.delete("/api/companies/:_id", deleteCompany);
+    app.put("/api/companies/:_id", updateCompany);
 
 }
 export default CompanyRoutes;
